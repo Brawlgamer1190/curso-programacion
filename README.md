@@ -1,16 +1,9 @@
-# Interfaz gráfica Tkinter
+# curso-programacion
+este repositorio corresponde al utilizado en el curso de programación de el colegio cientifico de San Vito
 
-En el presente directorio, se utilizó el módulo Tkinter para crear una interfaz gráfica para una calculadora.
+## modo de uso
 
-## Instrucciones de uso
-
-¿Qué hay que tener instalado para ejecutar el programa? ¿Qué comando utilizar?
-
-py calculadora.py
-
-
-## Demostración de ejecución
-
-<p align="center>
-    <img width="500" src=".\images\image.png"
-</p>
+para utilizar el scrip de organización de carpetas, dirijase al directorio ./primer_programa/ y ejecute el siguiente comando en sistema
+py scriptcarpetas.py
+>[¡TIP]
+>si se encuentra en windows utilice py en lugar de python3

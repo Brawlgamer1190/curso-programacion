@@ -81,30 +81,31 @@ Elige una opción:
             jugador = cargar_estadisticas(nombre)
             juego = JuegoAdivinanza()
             juego.reiniciar()
-            stop = False
-            while stop == False:
-                numero = int(input("Adivina el número (entre 1 y 100): "))
+            stop = 7
+            while stop != 0:
+                numero = int(input(f"Adivina el número (entre 1 y 100) te quedan {stop} intentos: "))
                 juego.registrar_intento()
                 resultado = juego.validar_numero(numero)
                 if resultado == 1:
-                    print("El número es mayor, perdiste.")
-                    jugador.actualizar_historial(2)
+                    print("El número es mayor")
                 elif resultado == 3:
-                    print("El número es menor, ganaste.")
+                    print("El número es menor")
+                elif resultado == 2:
+                    print("Ese es el numero correcto, ¡Felicidades!")
                     jugador.actualizar_historial(1)
-                seguir = input("Ingrese 1 si desea dejar de jugar, ingrese cualquier otro número si desea volver a jugar: ")
-                if seguir == "1" :
-                    stop = True
+                    stop = 1
+                stop -= 1
+            jugador.actualizar_historial(2)
             guardar_estadisticas(jugador)
         elif opcion == "2":
             if jugador:
                 jugador.mostrar_estadisticas()
             else:
-                print("Aún no has jugado ninguna partida. Juega primero para ver estadísticas.")
+                print("Aún no has jugado ninguna partida. Juega primero para poder ver tus estadísticas.")
         elif opcion == "3":
             if jugador:
                 guardar_estadisticas(jugador)
-            print("Gracias por jugar. ¡Hasta pronto!")
+            print("Gracias por jugar. Vuelve pronto")
             break
         else:
             print("Por favor, elige una opción válida.")
